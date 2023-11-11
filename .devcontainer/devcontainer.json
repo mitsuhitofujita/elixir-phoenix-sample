@@ -27,6 +27,7 @@
             },
             "extensions": [
                 "jakebecker.elixir-ls",
+                "phoenixframework.phoenix",
                 "esbenp.prettier-vscode",
                 "redhat.vscode-yaml"
             ]
