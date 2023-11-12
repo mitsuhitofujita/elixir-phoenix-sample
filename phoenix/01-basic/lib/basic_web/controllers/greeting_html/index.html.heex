@@ -1,0 +1,9 @@
+<h1>Greetings</h1>
+
+<ul>
+  <%= for greeting <- @greetings do %>
+    <li><%= greeting.message %></li>
+  <% end %>
+</ul>
+
+<.link navigate={~p"/greetings/new"}>New Greeting</.link>

@@ -1,0 +1,8 @@
+<h1>New Greeting</h1>
+
+<.form :let={form} for={@changeset} action={~p"/greetings"} method="post">
+  <.input field={form[:message]} />
+  <input type="submit" value="Save" />
+</.form>
+
+<.link navigate={~p"/greetings"}>Back to Greetings</.link>
