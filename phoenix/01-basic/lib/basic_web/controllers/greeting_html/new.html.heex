@@ -1,8 +1,14 @@
-<h1>New Greeting</h1>
+<.header>
+  New Greeting
+  <:subtitle>greeting!</:subtitle>
+</.header>
 
-<.form :let={form} for={@changeset} action={~p"/greetings"} method="post">
-  <.input field={form[:message]} />
-  <input type="submit" value="Save" />
-</.form>
+<.simple_form :let={form} for={@changeset} action={~p"/greetings"} method="post">
+  <.input field={form[:message]} type="text" label="Message" />
 
-<.link navigate={~p"/greetings"}>Back to Greetings</.link>
+  <:actions>
+    <.button>Save Greeting</.button>
+  </:actions>
+</.simple_form>
+
+<.back navigate={~p"/greetings"}>Back to Greetings</.back>

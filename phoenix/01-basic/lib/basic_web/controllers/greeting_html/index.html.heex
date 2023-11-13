@@ -1,9 +1,16 @@
-<h1>Greetings</h1>
+<.header>
+  Greetings
+  <:subtitle>greeting!</:subtitle>
+</.header>
 
-<ul>
-  <%= for greeting <- @greetings do %>
-    <li><%= greeting.message %></li>
-  <% end %>
-</ul>
+<div class="mt-14">
+  <.link navigate={~p"/greetings/new"}><.button>New Greeting</.button></.link>
+</div>
 
-<.link navigate={~p"/greetings/new"}>New Greeting</.link>
+<div class="mt-14">
+  <ul class="-my-4 divide-y divide-zinc-100">
+    <div :for={greeting <- @greetings} class="flex gap-4 py-4 text-sm leading-6 sm:gap-8">
+      <li class="w-1/4 flex-none text-zinc-500"><%= greeting.message %></li>
+    </div>
+  </ul>
+</div>

@@ -13,5 +13,6 @@ defmodule Basic.Greeting do
     greeting
     |> cast(attrs, [:message])
     |> validate_required([:message])
+    |> validate_format(:message, ~r/\D/, message: "must contain only numbers")
   end
 end

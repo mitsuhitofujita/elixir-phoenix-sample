@@ -1,5 +1,11 @@
-<h1>Greeting Created!</h1>
+<.header>
+  Greeting Created!
+  <:subtitle>greeting!</:subtitle>
+</.header>
 
+<div class="mt-14">
+<p>Your greeting message is...</p>
 <p><%= @greeting.message %></p>
+</div>
 
-<.link navigate={~p"/greetings"}>Back to Greetings</.link>
+<.back navigate={~p"/greetings"}>Back to Greetings</.back>
