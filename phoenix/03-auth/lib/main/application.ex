@@ -15,8 +15,6 @@ defmodule Main.Application do
         skip: skip_migrations?()},
       {DNSCluster, query: Application.get_env(:main, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: Main.PubSub},
-      # Start the Finch HTTP client for sending emails
-      {Finch, name: Main.Finch},
       # Start a worker by calling: Main.Worker.start_link(arg)
       # {Main.Worker, arg},
       # Start to serve requests, typically the last entry

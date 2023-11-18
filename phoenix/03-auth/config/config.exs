@@ -20,16 +20,7 @@ config :main, MainWeb.Endpoint,
     layout: false
   ],
   pubsub_server: Main.PubSub,
-  live_view: [signing_salt: "23h1FYro"]
-
-# Configures the mailer
-#
-# By default it uses the "Local" adapter which stores the emails
-# locally. You can see the emails in your browser, at "/dev/mailbox".
-#
-# For production it's recommended to configure a different adapter
-# at the `config/runtime.exs`.
-config :main, Main.Mailer, adapter: Swoosh.Adapters.Local
+  live_view: [signing_salt: "YTX+1Uni"]
 
 # Configure esbuild (the version is required)
 config :esbuild,
