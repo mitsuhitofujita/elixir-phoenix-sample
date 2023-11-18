@@ -18,6 +18,7 @@ defmodule MainWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+    live "/greetings", GreetingLive
   end
 
   # Other scopes may use custom stacks.
