@@ -2,11 +2,15 @@ defmodule Main.Accounts.User do
   use Ecto.Schema
   import Ecto.Changeset
 
+  alias Main.Greeting
+
   schema "users" do
     field :email, :string
     field :password, :string, virtual: true, redact: true
     field :hashed_password, :string, redact: true
     field :confirmed_at, :naive_datetime
+
+    has_many :greetings, Greeting
 
     timestamps(type: :utc_datetime)
   end
@@ -155,4 +159,11 @@ defmodule Main.Accounts.User do
       add_error(changeset, :current_password, "is not valid")
     end
   end
+
+    @doc false
+    def assoc_changeset(user) do
+      user
+      |> cast(%{}, [])
+      |> validate_required([:id])
+    end
 end
