@@ -1,0 +1,25 @@
+<.header>
+  Greetings
+  <:subtitle>greeting!</:subtitle>
+</.header>
+
+<div class="mt-14">
+  <.simple_form phx-submit="submit" for={@form} id="send-message">
+    <.input field={@form[:message]} type="text" label="Message" />
+    <:actions>
+      <.button>Save Greeting</.button>
+    </:actions>
+  </.simple_form>
+</div>
+
+<div class="mt-14">
+  <ul phx-update="stream" id="greetings" class="-my-4 divide-y divide-zinc-100">
+    <div
+      :for={{dom_id, greeting} <- @streams.greetings}
+      id={dom_id}
+      class="flex gap-4 py-4 text-sm leading-6 sm:gap-8"
+    >
+      <li class="w-1/4 flex-none text-zinc-500"><%= greeting.message %></li>
+    </div>
+  </ul>
+</div>
